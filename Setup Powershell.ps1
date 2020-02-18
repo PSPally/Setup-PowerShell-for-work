@@ -53,3 +53,5 @@ if ($ProfileContent -notcontains $TranscriptLine) {
     Out-File -InputObject $ProfileContent -FilePath $ProfilePath
 }
 
+# Add PowerShell extension to VS Code
+code --install-extension ms-vscode.powershell
