@@ -26,7 +26,7 @@ if (-not $(Test-Path -Path $TranscriptsFolder)) {
 }
 
 # Setup transcripts for Windows PowerShell
-$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\WindowsPowerShell.`$(Get-Date -Format yyMMdd).txt`r`n"
+$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\WindowsPowerShell.`$(Get-Date -Format yyyyMMdd).txt`r`n"
 $ProfilePath = "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
 try {$ProfileContent = Get-Content -Path $ProfilePath}
     catch {$ProfileContent = ''}
@@ -35,7 +35,7 @@ if ($ProfileContent -notcontains $TranscriptLine) {
     Out-File -InputObject $ProfileContent -FilePath $ProfilePath
 }
 # Setup transcripts for PowerShell (core)
-$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\PowerShell.`$(Get-Date -Format yyMMdd).txt`r`n"
+$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\PowerShell.`$(Get-Date -Format yyyyMMdd).txt`r`n"
 $ProfilePath = "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 try {$ProfileContent = Get-Content -Path $ProfilePath}
     catch {$ProfileContent = ''}
@@ -44,7 +44,7 @@ if ($ProfileContent -notcontains $TranscriptLine) {
     Out-File -InputObject $ProfileContent -FilePath $ProfilePath
 }
 # Setup transcripts for VS Code
-$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\VSCode.`$(Get-Date -Format yyMMdd).txt`r`n"
+$TranscriptLine = "Start-Transcript -Path $TranscriptsFolder\VSCode.`$(Get-Date -Format yyyyMMdd).txt`r`n"
 $ProfilePath = "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1"
 try {$ProfileContent = Get-Content -Path $ProfilePath}
     catch {$ProfileContent = ''}
