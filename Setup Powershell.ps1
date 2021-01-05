@@ -24,7 +24,7 @@ Update-Help -Force
 # Schedule PowerShell help to be updated automatically
 $ActionParams = @{ 
     Execute  = 'PowerShell.exe' 
-    Argument = '-NoProfile -ExecutionPolicy Bypass -Command Update-Help -Force' 
+    Argument = '-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command Update-Help -Force' 
 }
 $Action      = New-ScheduledTaskAction @ActionParams
 $Trigger     = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Wednesday -At '9:02:00' -RandomDelay '0:03:00' 
@@ -35,7 +35,7 @@ Register-ScheduledTask -TaskName 'Update PowerShell Help' -Action $Action -Trigg
 # Schedule PowerShell modules to be kept up to date
 $ActionParams = @{ 
     Execute  = 'PowerShell.exe' 
-    Argument = '-NoProfile -ExecutionPolicy Bypass -Command Update-Module -Force' 
+    Argument = '-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command Update-Module -Force' 
 }
 $Action      = New-ScheduledTaskAction @ActionParams
 $Trigger     = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Wednesday -At '8:30:00' -RandomDelay '0:03:00' 
